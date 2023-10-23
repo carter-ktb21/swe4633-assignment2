@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import { db } from "../firebase-config";
 import { collection, addDoc } from 'firebase/firestore';
 
@@ -26,7 +26,7 @@ export const DataForm = (props) => {
     return (
        <div>
             <form onSubmit={handleSubmit}>
-            <label>
+            <label htmlFor="idNumber">
                 ID Number
                 <input 
                 type="text"
@@ -50,6 +50,11 @@ export const DataForm = (props) => {
             {submitted && (
                 <Navigate replace to="/DataTable" />
             )}
+            
+            <div className="button-container">
+            <Link to="/dataTable" className="button">View Data</Link>
+            </div>
+
         </div>
     )
 }

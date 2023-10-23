@@ -8,10 +8,12 @@ import { DataForm } from './Components/DataForm';
 
 function App() {
   return (
+    <div>
     <Routes>
       <Route exact path="/" element={<DataForm />} />
       <Route path="/dataTable" element={<DataTable />} />
     </Routes>
+    </div>
   );
 }
 
